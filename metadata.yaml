@@ -1,0 +1,25 @@
+name: manila-infinidat
+summary: infinidat integration for OpenStack Block Storage
+maintainer: OpenStack Charmers <openstack-charmers@lists.ubuntu.com>
+description: |
+ Cinder is the block storage service for the Openstack project.
+ .
+ This charm provides a infinidat backend for Cinder
+tags:
+  - openstack
+  - storage
+  - file-servers
+  - misc
+series:
+  - focal
+subordinate: true
+provides:
+  manila-plugin:
+    interface: manila-plugin
+    scope: container
+requires:
+  certificates:
+    interface: tls-certificates
+  juju-info:
+    interface: juju-info
+    scope: container

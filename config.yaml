@@ -1,0 +1,72 @@
+---
+options:
+  extra_packages:
+    description: >
+      Space separated list of extra deb packages to install.
+    type: string
+    default: ""
+  package_status:
+    default: "install"
+    type: string
+    description: >
+      The status of service-affecting packages will be set to this
+      value in the dpkg database. Valid values are "install" and "hold".
+  source:
+    description: >
+      List of extra apt sources, per charm-helpers standard
+      format (a yaml list of strings encoded as a string). Each source
+      may be either a line that can be added directly to
+      sources.list(5), or in the form ppa:<user>/<ppa-name> for adding
+      Personal Package Archives, or a distribution component to enable.
+    type: string
+    default: ""
+  key:
+    description: >
+      List of signing keys for install_sources package sources, per
+      charmhelpers standard format (a yaml list of strings encoded as
+      a string). The keys should be the full ASCII armoured GPG public
+      keys. While GPG key ids are also supported and looked up on a
+      keyserver, operators should be aware that this mechanism is
+      insecure. null can be used if a standard package signing key is
+      used that will already be installed on the machine, and for PPA
+      sources where the package signing key is securely retrieved from
+      Launchpad.
+    type: string
+    default: ""
+  debug:
+    default: !!bool false
+    type: boolean
+    description: Enable debug logging
+  verbose:
+    default: !!bool false
+    type: boolean
+    description: Enable verbose logging
+  infinibox-ip:
+    type: string
+    description: The management VIP of the infinbox.
+  infinibox-login:
+    type: string
+    description: The login to the infinibox.
+  infinibox-password:
+    type: string
+    description: The password for the infinibox.
+  pool-name:
+    type: string
+    description: >
+      The pool name in the infinibox that shares will be
+      provisioned from.
+  nas-network-space-name:
+    type: string
+    description: >
+      The NAS network space name in the infinibox.  The manila backend
+      name is configured to use this name. To define multiple network spaces, provide
+      a comma delimited list of the infinibox network space names to configure.
+      A seperate manila backend will be configured for each item in the list.
+  thin-provision:
+    type: boolean
+    description: Choose whether to thin provision
+    default: !!bool true
+  share-backend-name:
+    type: string
+    description: Manila backend name
+    default: __app__
