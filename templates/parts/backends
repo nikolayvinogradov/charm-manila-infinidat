@@ -1,6 +1,6 @@
 {% for backend_name in backends %}
 [{{ backend_name }}]
-{% for key, value in backends[backend_name] -%}
+{% for key, value in backends[backend_name] %}
 {{ key }} = {{ value }}
 {%- endfor %}
 {% endfor %}
