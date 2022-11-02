@@ -1,0 +1,10 @@
+applications:
+  manila-infinidat:
+    charm: ../../manila-infinidat.charm
+    options:
+      infinibox-ip: {{ OS_INFINIDAT_IP00 }}
+      infinibox-login: {{ OS_INFINIDAT_LOGIN00 }}
+      infinibox-password: {{ OS_INFINIDAT_PASSWORD00 }}
+      pool-name: manila
+      # network space of type NAS on the Infinibox side
+      nas-network-space-name: nas
