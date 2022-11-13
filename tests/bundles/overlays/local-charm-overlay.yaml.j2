@@ -1,0 +1,9 @@
+applications:
+  manila-infinidat:
+    options:
+      infinibox-ip: {{ OS_INFINIBOX_IP }}
+      infinibox-login: {{ OS_INFINIBOX_LOGIN }}
+      infinibox-password: {{ OS_INFINIBOX_PASSWORD }}
+      # network space of type NAS on the Infinibox side
+      nas-network-space-name: {{ OS_INFINIBOX_NAS_NETSPACE | default('nas') }}
+      pool-name: {{ OS_INFINIBOX_POOL_NAME | default('manila') }}
